@@ -10,7 +10,7 @@ docker image build -t project_flask .
 ```
 
 ```
-docker run -p 3000:3000 -d project_flask
+docker run -p 5000:5000 -d project_flask
 ```
 
 
