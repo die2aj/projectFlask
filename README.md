@@ -6,11 +6,11 @@ In this application you can see the names of the Game of Thrones characters that
 
 
 ```
-_docker image build -t project_flask ._
+docker image build -t project_flask .
 ```
 
 ```
-_docker run -p 3000:3000 -d project_flask_
+docker run -p 3000:3000 -d project_flask
 ```
 
 
