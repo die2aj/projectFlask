@@ -5,7 +5,7 @@ pipeline {
             steps {
                 //  Building new image
                 sh 'docker image build -t project_flask .'
-                sh 'docker run -p 3000:3000 -d project_flask'
+                sh 'docker run -p 5000:5000 -d project_flask'
                 echo "Image built"
             }
         }
