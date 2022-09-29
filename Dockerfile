@@ -1,5 +1,8 @@
 FROM python:3.8-alpine
 
+EXPOSE 5000/tcp
+
+
 COPY . /app
 WORKDIR /app
 
