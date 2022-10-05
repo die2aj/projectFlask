@@ -1,13 +1,16 @@
+
+
 FROM python:3.8-alpine
 
-EXPOSE 3000/tcp
-
-
-COPY . /app
 WORKDIR /app
 
+COPY requirements.txt .
+
 RUN pip install -r requirements.txt
-RUN pip install requests
+
+COPY . /app
+
+EXPOSE 3000/tcp
 
 ENTRYPOINT [ "python" ]
 
