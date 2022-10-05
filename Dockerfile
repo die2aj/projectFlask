@@ -11,4 +11,4 @@ RUN pip install requests
 
 ENTRYPOINT [ "python" ]
 
-CMD ["movies.py" ]
+CMD ["main.py" ]
