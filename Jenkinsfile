@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t diegoaco/project_flask:latest .'
+        sh 'docker build -t diegoaco/project_flask .'
       }
     }
     stage('Login') {
@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push diegoaco/project_flask:latest'
+        sh 'docker push diegoaco/project_flask'
       }
     }
   }
