@@ -1,17 +1,11 @@
-
-
 pipeline {
-  agent { label 'linux' }
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
-  }
   environment {
     DOCKERHUB_CREDENTIALS = credentials('diegoaco-dockerhub')
   }
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t diegoaco/projectflask:latest .'
+        sh 'docker build -t diegoaco/project_flask:latest .'
       }
     }
     stage('Login') {
@@ -21,7 +15,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push diegoaco/projectflask:latest'
+        sh 'docker push diegoaco/project_flask:latest'
       }
     }
   }
