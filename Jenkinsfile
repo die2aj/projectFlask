@@ -3,6 +3,9 @@ pipeline {
   environment {
     DOCKERHUB_CREDENTIALS = credentials('diegoaco-dockerhub')
   }
+  agent {
+        docker { image 'node:16.13.1-alpine' }
+    }
   stages {
     stage('Build') {
       steps {
