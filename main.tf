@@ -6,6 +6,14 @@ resource "aws_instance" "ec2Instance" {
 	ami = "ami-097a2df4ac947655f"
 	instance_type = "t2.micro"
 
+	user_data = <<-EOF
+  	#!/bin/bash
+  	echo "*** Installing apache2"
+  	sudo apt update -y
+  	sudo apt install apache2 -y
+  	echo "*** Completed Installing apache2"
+  	EOF
+
     tags = {
 		Name = "EC2 Terraform Onboarding1"
 	}
