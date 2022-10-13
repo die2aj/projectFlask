@@ -9,7 +9,7 @@ resource "aws_instance" "ec2Instance" {
 	user_data = <<-EOF
   	#!/bin/bash
   	sudo apt update -y
-  	sudo apt  install docker.i
+  	sudo snap install docker
   	EOF
 
     tags = {
