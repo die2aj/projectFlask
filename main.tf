@@ -10,8 +10,6 @@ resource "aws_instance" "ec2Instance" {
   	#!/bin/bash
   	sudo apt update -y
   	sudo snap install docker
-	sudo su
-	docker pull debian:jessie
 
   	EOF
 
