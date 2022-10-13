@@ -8,10 +8,9 @@ resource "aws_instance" "ec2Instance" {
 
 	user_data = <<-EOF
   	#!/bin/bash
-  	echo "*** Installing apache2"
   	sudo apt update -y
-  	sudo apt install apache2 -y
-  	echo "*** Completed Installing apache2"
+  	sudo apt install docker-ce
+	sudo systemctl status docker
   	EOF
 
     tags = {
