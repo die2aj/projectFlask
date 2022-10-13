@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-     docker { image 'node:16.13.1-alpine' }
-   }
+  agent any
   environment {
     DOCKERHUB_CREDENTIALS = credentials('diegoaco-dockerhub')
   }
