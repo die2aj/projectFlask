@@ -1,11 +1,10 @@
 pipeline {
-  agent any
-  environment {
-    DOCKERHUB_CREDENTIALS = credentials('diegoaco-dockerhub')
-  }
   agent {
         docker { image 'node:16.13.1-alpine' }
     }
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials('diegoaco-dockerhub')
+  }
   stages {
     stage('Build') {
       steps {
