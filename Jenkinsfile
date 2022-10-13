@@ -19,17 +19,7 @@ pipeline {
         sh 'docker push diegoaco/project_flask'
       }
     }
-  }
-   stage('Terraform Init'){
-            steps{
-                sh 'terraform init'
-            }
-        }
-        stage('Terraform Apply'){
-            steps{
-                sh 'terraform apply --auto-approve'
-            }
-        }  
+  } 
   post {
     always {
       sh 'docker logout'
