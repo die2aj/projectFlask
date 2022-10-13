@@ -20,6 +20,16 @@ pipeline {
       }
     }
   }
+   stage('Terraform Init'){
+            steps{
+                sh 'terraform init'
+            }
+        }
+        stage('Terraform Apply'){
+            steps{
+                sh 'terraform apply --auto-approve'
+            }
+        }  
   post {
     always {
       sh 'docker logout'
