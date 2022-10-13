@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  tools {
+        terraform 'terraform'
+    }
   environment {
     DOCKERHUB_CREDENTIALS = credentials('diegoaco-dockerhub')
   }
