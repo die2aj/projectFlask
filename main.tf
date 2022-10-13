@@ -16,7 +16,7 @@ resource "aws_instance" "ec2Instance" {
 resource "aws_security_group" "sgOnboarding" {
 	name = "terraform-tcp-sg-onboarding"
 	
-	iingress {
+	ingress {
     description      = "SSH from VPC"
     from_port        = 22
     to_port          = 22
