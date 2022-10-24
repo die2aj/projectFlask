@@ -1,0 +1,48 @@
+- name: ec2Instance
+  hosts: ec2Instance
+  become: true
+
+  tasks:
+  - name: Update packages
+    yum:
+      name: '*'
+      state: latest
+      update_only: yes
+
+  - name: Update package 1
+    yum:
+      name: "{{ packages }}"
+      state: "latest"
+      update_cache: yes
+    vars:
+      packages:
+      - python-pip
+      - yum-utils
+      - device-mapper-persistent-data
+      - lvm2
+      - amazon-linux-extras
+  
+  - name: Add extras
+    shell: yum-config-manager --enable extras
+
+  - name: Install docker 18
+    shell: "amazon-linux-extras install docker=18.06.1 -y"
+
+  - name: Install docker python
+    pip:
+      name: "{{ packages }}"
+    vars:
+      packages:
+      - docker-py
+
+
+  - name: enable docker
+    service:
+      name: docker
+      state: started
+      enabled: yes
+
+  - name: create directory
+    file:
+      path: /home/ec2-user/app
+      state: directory

@@ -10,7 +10,7 @@ docker image build -t project_flask .
 ```
 
 ```
-docker run -p 9000:9000 -d project_flask
+docker run -p 8090:8090 -d project_flask
 ```
 
 
