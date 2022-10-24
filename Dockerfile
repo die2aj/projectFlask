@@ -10,7 +10,7 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
-EXPOSE 3000/tcp
+EXPOSE 9000/tcp
 
 ENTRYPOINT [ "python" ]
 
