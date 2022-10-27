@@ -46,3 +46,18 @@
     file:
       path: /home/ec2-user/app
       state: directory
+
+      - name: pulling image from dockerhub
+    docker_image:
+      name: diegoaco/project_flask
+      source: pull
+
+  - name: launching docker container
+    docker_container:
+      name: app
+      image: diegoaco/project_flask
+      state: started
+      detach: true
+      interactive: true
+      ports: 
+          - "80:9000"
